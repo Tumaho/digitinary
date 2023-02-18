@@ -3,11 +3,9 @@ import Signin from './components/signin/signin';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/home/home';
 import ProtectedRoute from './components/protectedRoute';
-import PostContext from './context/context';
 
 function App() {
   return (
-    <PostContext>
       <Router>
         <Routes>
           <Route path="/" element={<Signin />} />
@@ -21,11 +19,8 @@ function App() {
           />
           <Route path='*' element={<h1 style={{ textAlign: 'center', marginBlock: '20%' }}>404 NOT Found </h1>}></Route>
         </Routes>
-
-
-
       </Router>
-    </PostContext>
+    
   );
 }
 

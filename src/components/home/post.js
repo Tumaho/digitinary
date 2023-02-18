@@ -33,7 +33,7 @@ import FormDialog from '../common/formDialog';
 export default function Post({ post, handleDeletePost,editPostsChange }) {
     const [show, setShow] = useState(false)
     const [postComments, setPostComments] = useState([])
-    const posts = useState(post);
+    // const posts = useState(post);
     const [confirm, setConfirm] = useState(false)
     const [showDialog, setShowDialog] = useState(false);
 
@@ -207,7 +207,7 @@ export default function Post({ post, handleDeletePost,editPostsChange }) {
                 <AlertDialog setConfirm={setConfirm} handleDelete={handleDelete}></AlertDialog>
             }
             {showDialog &&
-                <FormDialog setShowDialog={setShowDialog} previosTitle={posts.title} previosBody={posts.body} editPostsChange={editPostsChange} onePost={post}></FormDialog>
+                <FormDialog setShowDialog={setShowDialog} previosTitle={post.title} previosBody={post.body} editPostsChange={editPostsChange} onePost={post}></FormDialog>
             }
         </>
     );

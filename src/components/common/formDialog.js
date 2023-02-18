@@ -56,10 +56,10 @@ export default function FormDialog({ setShowDialog, setPosts, posts, previosTitl
                 onClose={() => { setShowDialog(false) }}
                 aria-labelledby="edit-apartment"
             >
-                <DialogTitle id="edit-apartment">Edit</DialogTitle>
+                <DialogTitle id="edit-apartment">Post Form</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Please, edit the flat and the floor of your apartment.
+                        Please, fill the inputs.
                     </DialogContentText>
                     <TextField
                         autoFocus
