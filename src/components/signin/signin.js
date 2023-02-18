@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import cookie from 'react-cookies'
 import { useNavigate } from "react-router-dom";
-import { PostContext } from '../../context/context';
 import axios from "axios";
 
 
@@ -18,8 +17,6 @@ const theme = createTheme();
 
 export default function Signin() {
     let navigate = useNavigate();
-    const contextData = useContext(PostContext);
-
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -27,7 +24,7 @@ export default function Signin() {
         await axios.get('https://jsonplaceholder.typicode.com/users')
             .then(function (response) {
                 response.data.forEach(item => {
-                    if (item.email.toLowerCase() == data.get('email').toLowerCase()) {
+                    if (item.email.toLowerCase() === data.get('email').toLowerCase()) {
                         cookie.save('data', item, { expires: new Date(Date.now() + 86400000) });
                         navigate('/home');
                     }
